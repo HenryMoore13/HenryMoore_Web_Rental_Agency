@@ -2,10 +2,11 @@ body {
     width: 100%;
     background-color: rgb(76, 88, 92);
 }
-/* .m-5 {
-    padding: 2rem 2rem 4rem 2rem;
-    background-color: rgba(162, 191, 207, 0.568);
-    border-radius: 7%;
+#input {
+    width: 4rem;
+}
+.card {
+    background-color: rgb(93, 120, 155);
 }
 h2 {
     color: rgba(162, 191, 207, 0.835);
@@ -16,15 +17,9 @@ h2 {
 #text {
     font-size: 17px;
 }
-#buy {
-    font-size: 23px;
-    color: rgb(78, 78, 216);
-    border-radius: 10px;
-    background-color: white;
-    padding: 3px;
-}
+
 img {
-    border-radius: 15%;
+    border-radius: 10px;
 }
 h4,
 p {
@@ -37,4 +32,44 @@ p {
 }
 #intro {
     height: 13rem;
-} */
+    background-color: grey;
+    border-radius: 5px;
+}
+.body1 {
+    margin: 0;
+    padding: 0;
+    font-family: "montserrat";
+}
+.btn {
+    text-align: center;
+    color: blue;
+    background-color: grey;
+    padding: 5px;
+}
+#box {
+    width: 500px;
+    display: none;
+    overflow: hidden;
+    background: #f1f1f1;
+    box-shadow: 0 0 20px black;
+    border-radius: 8px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    padding: 10px;
+    text-align: center;
+}
+#enter {
+    width: 3.5rem;
+    font-size: 10px;
+    height: 2rem;
+}
+#rentname {
+    color: black;
+}
+#count {
+    position: relative;
+    left: 6rem;
+}
