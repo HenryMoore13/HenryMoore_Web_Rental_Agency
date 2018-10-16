@@ -1,5 +1,6 @@
 function car1(STOCK_DATA) {
     var button = document.getElementById("chall");
+    console.log(button);
     button.innerHTML = STOCK_DATA.repository.carChall;
 }
 function car2(STOCK_DATA) {
@@ -65,6 +66,19 @@ function nameVal() {
         return false;
     }
 }
+
+pop();
+close();
+
+car1(STOCK_DATA);
+car2(STOCK_DATA);
+car3(STOCK_DATA);
+car4(STOCK_DATA);
+car5(STOCK_DATA);
+car6(STOCK_DATA);
+car7(STOCK_DATA);
+car8(STOCK_DATA);
+nameVal();
 // function pop1() {
 //     var c = 0;
 //     if (c == 0) {
@@ -84,16 +98,3 @@ function nameVal() {
 //         }
 //     });
 // }
-pop();
-close();
-pop1();
-submit();
-car1(STOCK_DATA);
-car2(STOCK_DATA);
-car3(STOCK_DATA);
-car4(STOCK_DATA);
-car5(STOCK_DATA);
-car6(STOCK_DATA);
-car7(STOCK_DATA);
-car8(STOCK_DATA);
-nameVal();
