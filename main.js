@@ -41,7 +41,6 @@ function pop() {
             } else {
                 document.getElementById("box").style.display = "none";
             }
-            console.log(c);
         });
     }
 }
@@ -54,42 +53,41 @@ function close() {
         }
     });
 }
-function formVal() {
+function nameVal() {
     var name = document.forms["checkout"]["Name"];
-    var email = document.forms["checkout"]["EMail"];
-    var phone = document.forms["checkout"]["Telephone"];
-    var address = document.forms["checkout"]["Address"];
 
-    if (name.value === "") {
+    if (name.value.match(/[a-zA-Z]/)) {
         window.alert("Please enter your name.");
         name.focus();
-        return false;
-    } else if (address.value === "") {
-        window.alert("Please enter your address.");
-        name.focus();
-        return false;
-    } else if (email.value === "") {
-        window.alert("Please enter a valid e-mail address.");
-        email.focus();
-        return false;
-    } else if (email.value.indexOf("@", 0) < 0) {
-        window.alert("Please enter a valid e-mail address.");
-        email.focus();
-        return false;
-    } else if (email.value.indexOf(".", 0) < 0) {
-        window.alert("Please enter a valid e-mail address.");
-        email.focus();
-        return false;
-    } else if (phone.value === "") {
-        window.alert("Please enter your telephone number.");
-        phone.focus();
+        return true;
+    } else {
+        name.value.match("");
         return false;
     }
-
-    return true;
 }
+// function pop1() {
+//     var c = 0;
+//     if (c == 0) {
+//         document.getElementById("box1").style.display = "block";
+//         c = 1;
+//     } else {
+//         document.getElementById("box1").style.display = "none";
+//     }
+//     console.log(c);
+// }
+// function submit() {
+//     var c = document.getElementById("box1");
+//     var button = document.getElementById("submit");
+//     button.addEventListener("click", () => {
+//         if (c.style.display === "block") {
+//             c.style.display = "none";
+//         }
+//     });
+// }
 pop();
 close();
+pop1();
+submit();
 car1(STOCK_DATA);
 car2(STOCK_DATA);
 car3(STOCK_DATA);
@@ -98,4 +96,4 @@ car5(STOCK_DATA);
 car6(STOCK_DATA);
 car7(STOCK_DATA);
 car8(STOCK_DATA);
-formVal();
+nameVal();
