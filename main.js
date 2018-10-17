@@ -66,10 +66,23 @@ function nameVal() {
         return false;
     }
 }
+function pop1() {
+    var c = 0;
+    var done = document.querySelectorAll(".done");
+    for (const d of done) {
+        d.addEventListener("click", () => {
+            if (c == 0) {
+                document.getElementById("box1").style.display = "block";
+                c = 1;
+            } else {
+                document.getElementById("box1").style.display = "none";
+            }
+        });
+    }
+}
 
 pop();
 close();
-
 car1(STOCK_DATA);
 car2(STOCK_DATA);
 car3(STOCK_DATA);
@@ -79,22 +92,3 @@ car6(STOCK_DATA);
 car7(STOCK_DATA);
 car8(STOCK_DATA);
 nameVal();
-// function pop1() {
-//     var c = 0;
-//     if (c == 0) {
-//         document.getElementById("box1").style.display = "block";
-//         c = 1;
-//     } else {
-//         document.getElementById("box1").style.display = "none";
-//     }
-//     console.log(c);
-// }
-// function submit() {
-//     var c = document.getElementById("box1");
-//     var button = document.getElementById("submit");
-//     button.addEventListener("click", () => {
-//         if (c.style.display === "block") {
-//             c.style.display = "none";
-//         }
-//     });
-// }
