@@ -54,32 +54,6 @@ function close() {
         }
     });
 }
-// function nameVal() {
-//     var name = document.forms["checkout"]["Name"];
-
-//     if (name.value.match(/[a-zA-Z]/)) {
-//         window.alert("Please enter your name.");
-//         name.focus();
-//         return true;
-//     } else {
-//         name.value.match("");
-//         return false;
-//     }
-// }
-function pop1() {
-    var c = 0;
-    var done = document.querySelectorAll(".done");
-    for (const d of done) {
-        d.addEventListener("click", () => {
-            if (c == 0) {
-                document.getElementById("box1").style.display = "block";
-                c = 1;
-            } else {
-                document.getElementById("box1").style.display = "none";
-            }
-        });
-    }
-}
 
 pop();
 close();
@@ -91,5 +65,3 @@ car5(STOCK_DATA);
 car6(STOCK_DATA);
 car7(STOCK_DATA);
 car8(STOCK_DATA);
-nameVal();
-pop1();
