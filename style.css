@@ -88,3 +88,9 @@ p {
     padding: 10px;
     text-align: center;
 }
+#bio {
+    width: 17rem;
+}
+img {
+    width: 100%;
+}
