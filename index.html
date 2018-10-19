@@ -31,83 +31,28 @@
 
         <div class="d-flex">
 
-            <div class="m-5">
-                <img src="images.jpeg">
-                <div>
-                    <p class="ml-2" id="chall"><b>New 2018 </b></p>
-                    <a onclick="pop()" href="#" class="btn">Rent Now</a>
-                </div>
-            </div>
-            <div class="m-5">
-                <img src="images1.jpeg">
-                <div>
-                    <p class="ml-2" id="must"><b>New 2018 </b></p>
-                    <a onclick="pop()" href="#" class="btn">Rent Now</a>
-                </div>
-            </div>
-            <div id="intro" class="m-5 p-4">
-                <center>
-                    <h4>Welcome To Henry's Auto Sells!</h4>
-                    <p id="bio">We offer the best deals on RENTS monthy & daily. Our duties are to
-                        get you
-                        in something that best fits your needs.</p>
-                </center>
-            </div>
-
-        </div>
-        <div class="d-flex">
-            <div class="m-5">
-                <img src="images2.jpeg">
-                <div>
-                    <p class="ml-2" id="char"><b>New 2018 </b></p>
-                    <a onclick="pop()" href="#" class="btn">Rent Now</a>
-                </div>
-            </div>
-            <div class="m-5">
-                <img src="images3.jpeg">
-                <div>
-                    <p class="ml-2" id="cama"><b>New 2018 </b></p>
-                    <a onclick="pop()" href="#" class="btn">Rent Now</a>
-
-                </div>
-            </div>
-
-
-            <div class="m-5">
-                <img src="index4.jpeg">
-                <div>
-                    <p class="ml-2" id="corv"><b>New 2018 </b></p>
-                    <a onclick="pop()" href="#" class="btn">Rent Now</a>
+            <div id="inventoryItems" class="m-5 row">
+                <div id="intro" class="p-4 col-4">
+                    <center>
+                        <h4>Welcome To Henry's Auto Sells!</h4>
+                        <p id="bio">We offer the best deals on RENTS monthy & daily. Our duties are to
+                            get you
+                            in something that best fits your needs.</p>
+                    </center>
                 </div>
             </div>
         </div>
-        <div class="d-flex">
-            <div class="m-5">
-                <img src="images5.jpeg">
-                <div>
-                    <p class="ml-2" id="lamb"><b>New 2018 </b></p>
-                    <a onclick="pop()" href="#" class="btn">Rent Now</a>
-                </div>
-            </div>
-
-
-            <div class="m-5">
-                <img src="images6.jpeg">
-                <div>
-                    <p class="ml-2" id="buga"><b>New 2018 </b></p>
-                    <a onclick="pop()" href="#" class="btn">Rent Now</a>
-                </div>
-            </div>
-            <div class="m-5">
-                <img src="images7.jpeg">
-                <div>
-                    <p class="ml-2" id="ferr"><b>New 2018 </b></p>
-                    <a onclick="pop()" href="#" class="btn">Rent Now</a>
-                </div>
-            </div>
-        </div>
-
     </div>
+    <script id="template1" type="text/x-handlebars-template">
+        <div class="col-4 mt-3">
+        <img src="{{imageURL}}">
+            <div>
+                <p class="ml-2 car" id="chall"><b>{{name}}</b></p>
+                <p>Price: {{price}}</p>
+                <a onclick="pop()" href="#" class="btn">Rent Now</a>
+            </div>
+        </div>
+    </script>
     <script src="./js/jquery.js" crossorigin="anonymous"></script>
     <script src="./js/bootstrap.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js" defer></script>
@@ -124,7 +69,7 @@
                 <label id="rentname" for="EMail">Email:</label>
                 <input type="email" name="EMail" required /><br />
                 <label id="rentname" for="Telephone">Number:</label>
-                <input type="text" name="Telephone" pattern="[0-9]{10}" /><br />
+                <input type="text" name="Telephone" pattern="[0-9]{10}" required /><br />
                 <label id="rentname" for="Street">Street:</label>
                 <input type="text" name="Street" required /><br />
                 <label id="rentname" for="City">City:</label>
@@ -141,16 +86,11 @@
                 <label for="check">Check</label><br />
                 <label id="rentname" for="Days">Days Rented:</label>
                 <input id="input" type="number" name="number" required><br />
-                <input type="submit" id="submit" class="done" onclick="nameVal()" value="submit" />
+                <input type="submit" id="submit" class="done" onclick="nameVal()" onsubmit="bye()" value="submit" />
             </form>
         </div>
         <a onclick="close()" class="close" id="close">Close</a>
     </div>
-    <div id="box1" class="body2">
-        <h1>Thank You!!</h1>
-    </div>
 </body>
-
-
 
 </html>
