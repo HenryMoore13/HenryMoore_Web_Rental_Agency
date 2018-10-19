@@ -21,7 +21,7 @@ const STOCK_DATA = [
     },
     {
         name: "Corvette Z06",
-        imageURL: "index4.jpeg",
+        imageURL: "images4.jpeg",
         price: "$250"
     },
     {
