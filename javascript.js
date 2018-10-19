@@ -5,12 +5,41 @@ function car(STOCK_DATA) {
         var html = template({
             name: data.name,
             imageURL: data.imageURL,
-            price: data.price
+            price: data.price,
+            id: data.id
         });
         document
             .querySelector("#inventoryItems")
             .insertAdjacentHTML("beforeend", html);
     }
+    pop();
+}
+function items(STOCK_DATA) {
+    var items = document.querySelectorAll(".item");
+    for (const item of items) {
+        item.querySelector(".btn").addEventListener("click", () => {
+            let name = item.querySelector(".name").innerText;
+            console.log(name);
+            for (const data of STOCK_DATA) {
+                if (name == data.name) {
+                    display(data);
+                }
+            }
+        });
+    }
+}
+
+function display(data) {
+    var div = document.querySelector("#template2").innerHTML;
+    var template = Handlebars.compile(div);
+    var html = template({
+        name: data.name,
+        imageURL: data.imageURL,
+        price: data.price
+    });
+    let selected = document.querySelector("#selected");
+    selected.innerHTML = "";
+    selected.insertAdjacentHTML("afterbegin", html);
 }
 
 function pop() {
@@ -43,7 +72,9 @@ function bye() {
     });
 }
 
-pop();
-close();
 bye();
 car(STOCK_DATA);
+pop();
+close();
+display(STOCK_DATA);
+items(STOCK_DATA);

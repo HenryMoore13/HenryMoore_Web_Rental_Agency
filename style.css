@@ -47,7 +47,7 @@ p {
     padding: 5px;
 }
 #box {
-    width: 500px;
+    width: 65%;
     display: none;
     overflow: hidden;
     background: #f1f1f1;
@@ -73,24 +73,34 @@ p {
     position: relative;
     left: 6rem;
 }
-#box1 {
-    width: 500px;
-    display: none;
-    overflow: hidden;
-    background: #f1f1f1;
-    box-shadow: 0 0 20px black;
-    border-radius: 8px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 9999;
-    padding: 10px;
-    text-align: center;
-}
+
 #bio {
     width: 17rem;
 }
-img {
-    width: 65%;
+#displayPic {
+    width: 70%;
+}
+#viewPic {
+    width: 100%;
+    margin-left: 1rem;
+}
+#viewInfo p {
+    color: black;
+}
+
+.col-sm-3 {
+    position: relative;
+    right: 19px;
+}
+.form-text {
+    font-size: 10px;
+    color: grey;
+    position: relative;
+    left: 3rem;
+}
+.drop1 {
+    position: relative;
+    right: 3.6rem;
+}
+.drop2 {
 }

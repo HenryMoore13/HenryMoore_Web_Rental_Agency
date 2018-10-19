@@ -42,14 +42,26 @@
         </div>
     </div>
     <script id="template1" type="text/x-handlebars-template">
-        <div class="col-4 mt-3">
-        <img src="{{imageURL}}">
+        <div class="col-4 mt-5 item text-center">
+            <div id="img-content" class="">
+                <img src="{{imageURL}}" id="displayPic">
+            </div>
+        
             <div>
-                <p class="ml-2 car" id="chall"><b>{{name}}</b></p>
+                <p class="ml-2 car"><b><span class="name">{{name}}</span></b></p>
                 <p>Price: {{price}}</p>
-                <a onclick="pop()" href="#" class="btn">Rent Now</a>
+                <a onclick="pop()" href="#" class="btn" data-target="{{id}}">Rent Now</a>
             </div>
         </div>
+    </script>
+    <script id="template2" type="text/x-handlebars-template">
+        <div>
+                <img src="{{imageURL}}" id="viewPic">
+                <div id="viewInfo">
+                    <p class="ml-2 car"><b>{{name}}</b></p>
+                    <p>{{price}}</p>
+                </div>
+            </div>
     </script>
     <script src="./js/jquery.js" crossorigin="anonymous"></script>
     <script src="./js/bootstrap.js" crossorigin="anonymous"></script>
@@ -58,37 +70,121 @@
     <script src="javascript.js" defer></script>
     <div id="box" class="body1">
         <h1>Great Choice!</h1>
-        <div id="count" class="d-flex">
-            <form name="checkout">
-                <label id="rentname" for="Name">FirstName:</label>
-                <input type="text" name="Name" required /> <br />
-                <label id="rentname" for="Name">LastName:</label>
-                <input type="text" name="fName" required /> <br />
-                <label id="rentname" for="EMail">Email:</label>
-                <input type="email" name="EMail" required /><br />
-                <label id="rentname" for="Telephone">Number:</label>
-                <input type="text" name="Telephone" pattern="[0-9]{10}" required /><br />
-                <label id="rentname" for="Street">Street:</label>
-                <input type="text" name="Street" required /><br />
-                <label id="rentname" for="City">City:</label>
-                <input type="text" name="City" required /><br />
-                <label id="rentname" for="State">State:</label>
-                <input type="text" name="State" pattern="[A-Za-z]{2}" required /><br />
-                <label id="rentname" for="Zip">Zip:</label>
-                <input type="text" name="Zip" pattern="[0-9]{5}" required /><br />
-                <input id="cash" type="radio" name="payment" checked>
-                <label for="cash">Cash</label>
-                <input id="Card" type="radio" name="payment">
-                <label for="Card">Card</label>
-                <input id="check" type="radio" name="payment">
-                <label for="check">Check</label><br />
-                <label id="rentname" for="Days">Days Rented:</label>
-                <input id="input" type="number" name="number" required><br />
-                <input type="submit" id="submit" class="done" onclick="nameVal()" onsubmit="bye()" value="submit" />
-            </form>
+        <div id="formItem" class="d-flex">
+            <div id="selected">
+
+            </div>
+
+            <div id="count">
+                <form name="checkout">
+                    <div class="form-group">
+                        <label class="col-form-label col-sm-3" id="Fname" for="Name">FirstName:</label>
+                        <input type="text" name="Name" placeholder="Mike" required />
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label col-sm-3" id="Lname" for="Name">LastName:</label>
+                        <input type="text" name="fName" placeholder="Jones" required />
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label col-sm-3" id="Email" for="EMail">Email:</label>
+                        <input type="email" name="EMail" placeholder="MikeJ@example.com" required />
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label col-sm-3" id="Phone" for="Telephone">Phone:</label>
+                        <input type="text" name="Telephone" pattern="[0-9]{10}" placeholder="123-456-7890" required />
+                        <small class="form-text text-muted">Type Phone Number Using no symbols!</small>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label col-sm-3" id="streetName" for="Street">Street:</label>
+                        <input type="text" name="Street" placeholder="Davis St" required />
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label col-sm-3" id="city" for="City">City:</label>
+                        <input type="text" name="City" placeholder="City / Town" required />
+                    </div>
+                    <div class="form-group drop1">
+                        <label class="col-form-label col-sm-3 drop2" id="state" for="State">State:</label>
+                        <select class="col-form-label col-sm-3">
+                            <option value="AL">AL</option>
+                            <option value="AK">AK</option>
+                            <option value="AR">AR</option>
+                            <option value="AZ">AZ</option>
+                            <option value="CA">CA</option>
+                            <option value="CO">CO</option>
+                            <option value="CT">CT</option>
+                            <option value="DC">DC</option>
+                            <option value="DE">DE</option>
+                            <option value="FL">FL</option>
+                            <option value="GA">GA</option>
+                            <option value="HI">HI</option>
+                            <option value="IA">IA</option>
+                            <option value="ID">ID</option>
+                            <option value="IL">IL</option>
+                            <option value="IN">IN</option>
+                            <option value="KS">KS</option>
+                            <option value="KY">KY</option>
+                            <option value="LA">LA</option>
+                            <option value="MA">MA</option>
+                            <option value="MD">MD</option>
+                            <option value="ME">ME</option>
+                            <option value="MI">MI</option>
+                            <option value="MN">MN</option>
+                            <option value="MO">MO</option>
+                            <option value="MS">MS</option>
+                            <option value="MT">MT</option>
+                            <option value="NC">NC</option>
+                            <option value="NE">NE</option>
+                            <option value="NH">NH</option>
+                            <option value="NJ">NJ</option>
+                            <option value="NM">NM</option>
+                            <option value="NV">NV</option>
+                            <option value="NY">NY</option>
+                            <option value="ND">ND</option>
+                            <option value="OH">OH</option>
+                            <option value="OK">OK</option>
+                            <option value="OR">OR</option>
+                            <option value="PA">PA</option>
+                            <option value="RI">RI</option>
+                            <option value="SC">SC</option>
+                            <option value="SD">SD</option>
+                            <option value="TN">TN</option>
+                            <option value="TX">TX</option>
+                            <option value="UT">UT</option>
+                            <option value="VT">VT</option>
+                            <option value="VA">VA</option>
+                            <option value="WA">WA</option>
+                            <option value="WI">WI</option>
+                            <option value="WV">WV</option>
+                            <option value="WY">WY</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label col-sm-3" id="zip" for="Zip">Zip:</label>
+                        <input type="text" name="Zip" pattern="[0-9]{5}" placeholder="12345" required />
+                    </div>
+                    <div class="form-group">
+                        <input id="cash" type="radio" name="payment" checked>
+                        <label class="col-form-label col-sm-3" for="cash">Cash</label>
+                        <input id="Card" type="radio" name="payment">
+                        <label class="col-form-label col-sm-3" for="Card">Card</label>
+                        <input id="check" type="radio" name="payment">
+                        <label class="col-form-label col-sm-3" for="check">Check</label>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label col-sm-3" id="rentname" for="Days">DaysRented:</label>
+                        <input id="input" type="number" name="number" required>
+                    </div>
+                    <input type="submit" id="submit" class="done ml-auto" onclick="nameVal()" onsubmit="bye()" value="submit" />
+                    <a onclick="close()" class="close" id="close">Close</a>
+                </form>
+            </div>
         </div>
-        <a onclick="close()" class="close" id="close">Close</a>
+
     </div>
+    </div>
+    </form>
+    </div>
+
 </body>
 
 </html>
