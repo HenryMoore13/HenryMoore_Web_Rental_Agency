@@ -31,10 +31,17 @@ p {
     font-size: 17px;
 }
 #intro {
-    height: 13rem;
     background-color: grey;
     border-radius: 5px;
 }
+
+@media screen and (min-width: 1010px) {
+    #intro {
+        margin-bottom: 10%;
+        margin-top: 5%;
+    }
+}
+
 .body1 {
     margin: 0;
     padding: 0;
@@ -74,9 +81,6 @@ p {
     left: 6rem;
 }
 
-#bio {
-    width: 17rem;
-}
 #displayPic {
     width: 70%;
 }

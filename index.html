@@ -30,7 +30,7 @@
         <div class="d-flex">
 
             <div id="inventoryItems" class="m-5 row">
-                <div id="intro" class="p-4 col-4">
+                <div id="intro" class="p-4 col-lg-4 col-sm-4">
                     <center>
                         <h4>Welcome To Henry's Auto Sells!</h4>
                         <p id="bio">We offer the best deals on RENTS monthy & daily. Our duties are to
@@ -42,7 +42,7 @@
         </div>
     </div>
     <script id="template1" type="text/x-handlebars-template">
-        <div class="col-4 mt-5 item text-center">
+        <div class="col-sm-6 col-lg-4 mt-5 item text-center">
             <div id="img-content" class="">
                 <img src="{{imageURL}}" id="displayPic">
             </div>
@@ -174,7 +174,7 @@
                         <label class="col-form-label col-sm-3" id="rentname" for="Days">DaysRented:</label>
                         <input id="input" type="number" name="number" required>
                     </div>
-                    <input type="submit" id="submit" class="done ml-auto" onclick="nameVal()" onsubmit="bye()" value="submit" />
+                    <input type="submit" id="submit" class="done ml-auto" onclick="bye()" value="submit" />
                     <a onclick="close()" class="close" id="close">Close</a>
                 </form>
             </div>
