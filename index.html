@@ -55,7 +55,7 @@
         </div>
     </script>
     <script id="template2" type="text/x-handlebars-template">
-        <div>
+        <div class="col-sm-3 col-lg-12">
                 <img src="{{imageURL}}" id="viewPic">
                 <div id="viewInfo">
                     <p class="ml-2 car"><b>{{name}}</b></p>
@@ -70,13 +70,13 @@
     <script src="javascript.js" defer></script>
     <div id="box" class="body1">
         <h1>Great Choice!</h1>
-        <div id="formItem" class="d-flex">
+        <div id="formItem" class="row">
             <div id="selected">
 
             </div>
 
             <div id="count">
-                <form name="checkout">
+                <form name="checkout" class="col-sm-12">
                     <div class="form-group">
                         <label class="col-form-label col-sm-3" id="Fname" for="Name">FirstName:</label>
                         <input type="text" name="Name" placeholder="Mike" required />
@@ -102,9 +102,9 @@
                         <label class="col-form-label col-sm-3" id="city" for="City">City:</label>
                         <input type="text" name="City" placeholder="City / Town" required />
                     </div>
-                    <div class="form-group drop1">
-                        <label class="col-form-label col-sm-3 drop2" id="state" for="State">State:</label>
-                        <select class="col-form-label col-sm-3">
+                    <div class="form-group">
+                        <label class="col-form-label col-sm-3" id="state" for="State">State:</label>
+                        <select id="select" class="">
                             <option value="AL">AL</option>
                             <option value="AK">AK</option>
                             <option value="AR">AR</option>

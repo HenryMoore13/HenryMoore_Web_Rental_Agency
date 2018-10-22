@@ -17,7 +17,7 @@ h2 {
 #text {
     font-size: 17px;
 }
-
+height: 13rem;
 img {
     border-radius: 10px;
 }
@@ -53,20 +53,38 @@ p {
     background-color: grey;
     padding: 5px;
 }
-#box {
-    width: 65%;
-    display: none;
-    overflow: hidden;
-    background: #f1f1f1;
-    box-shadow: 0 0 20px black;
-    border-radius: 8px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 9999;
-    padding: 10px;
-    text-align: center;
+
+@media screen and (min-width: 1010px) {
+    #box {
+        width: 65%;
+        display: none;
+        overflow: hidden;
+        background: #f1f1f1;
+        box-shadow: 0 0 20px black;
+        border-radius: 8px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 9999;
+        padding: 10px;
+        text-align: center;
+    }
+}
+@media screen and (max-width: 1009px) {
+    #box {
+        width: 100%;
+        display: none;
+        overflow: hidden;
+        background: #f1f1f1;
+        box-shadow: 0 0 20px black;
+        border-radius: 8px;
+        position: absolute;
+        top: 10%;
+
+        z-index: 9999;
+        padding: 10px;
+    }
 }
 #enter {
     width: 3.5rem;
@@ -76,10 +94,10 @@ p {
 #rentname {
     color: black;
 }
-#count {
+/* #count {
     position: relative;
     left: 6rem;
-}
+} */
 
 #displayPic {
     width: 70%;
@@ -102,9 +120,7 @@ p {
     position: relative;
     left: 3rem;
 }
-.drop1 {
-    position: relative;
-    right: 3.6rem;
-}
-.drop2 {
+
+#select {
+    width: 246px;
 }
